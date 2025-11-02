@@ -1,1 +1,0 @@
-This is a Django project with ALX BackEnd Web Dev. Thank you!
