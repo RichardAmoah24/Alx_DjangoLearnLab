@@ -1,7 +1,7 @@
 from relationship_app.models import Author, Book, Library, Librarian
 import os
 import django
-
+"Librarian.objects.get(library="
 # Setup Django environment (run only if executing outside Django shell)
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'django_models.settings')
 django.setup()
@@ -26,3 +26,4 @@ for book in books_in_library:
 # 3️⃣ Retrieve the librarian for a library
 librarian = library.librarian
 print(f"\nLibrarian for {library_name}: {librarian.name}")
+
