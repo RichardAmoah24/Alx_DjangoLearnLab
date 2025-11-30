@@ -61,7 +61,15 @@ def delete_book(request, pk):
     if request.method == "POST":
         book.delete()
         return redirect('book_list')
-    return render(request, 'relationship_app/delete_book.html', {'book': book})
+    return render(request, 'relationship_app/delete_book.html', {'book': book})# Class-based view for displaying details of a specific library
+class LibraryDetailView(DetailView):
+    model = Library
+    template_name = 'relationship_app/library_detail.html'
+    context_object_name = 'library'
+
+
+
+
 
 
 
