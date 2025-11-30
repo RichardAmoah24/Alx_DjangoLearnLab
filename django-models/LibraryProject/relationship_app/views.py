@@ -1,6 +1,15 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
+from django.shortcuts import render
+from .models import Book, Library
+from django.views.generic import DetailView
+
+# Function-based view for listing all books
+def list_books(request):
+    books = Book.objects.all()
+    return render(request, 'relationship_app/list_books.html', {'books': books})
+
 
 def register(request):
     if request.method == 'POST':
@@ -53,5 +62,6 @@ def delete_book(request, pk):
         book.delete()
         return redirect('book_list')
     return render(request, 'relationship_app/delete_book.html', {'book': book})
+
 
 
