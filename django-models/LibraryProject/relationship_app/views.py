@@ -3,6 +3,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from django.shortcuts import render
 from .models import Book, Library
+from django.views.generic.detail import DetailView
 from .models import Library
 from django.views.generic import DetailView
 
@@ -67,6 +68,7 @@ class LibraryDetailView(DetailView):
     model = Library
     template_name = 'relationship_app/library_detail.html'
     context_object_name = 'library'
+
 
 
 
